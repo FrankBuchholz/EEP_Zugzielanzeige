@@ -58,4 +58,4 @@ Die Zugnummern, Zwischenziele, Ziele und die Info (Laufschrift) können im Skrip
 Die Züge aus den Depots 1 (West) und 2 (Ost) werden gleichzeitig alle 2:30 Minuten abgerufen. Wenn ihr die Frequenz ändern möchtet, dann könnt ihr das bei stehender Anlage tun, indem ihr den Wert der Variablen `ZugAbstand` (in nicht allzugroßer Weise) verändert (750 / 5 = 150 Sekunden = 2:30 Minuten):  
 `local ZugAbstand = 750`
 
-Das Gleisbildstellpult `ZZA_Demo - Bahnhof` kann in ein neues Stellpult auf der Anlage geladen werden. Damit wird die 
+Das Gleisbildstellpult `ZZA_Demo - Bahnhof` kann in ein neues Stellpult auf der Anlage geladen werden. Damit können die Fahrstraßen und Züge beobachtet werden. Eine Steuerung ist nicht möglich, da Eingriffe in die automatische Steuerung in der Regel zu Chaos führen.
