@@ -1,10 +1,10 @@
 # EEP Zugzielanzeige
 
-Das Repository enthält die Steuerung der kleinen [Dioramaanlage](https://www.eepforum.de/forum/thread/35836-weil-ihr-in-der-weihnachtszeit-nichts-von-mir-gesehen-habt-hier-ein-kleines-gesc/) von [DH1](https://www.eepforum.de/user/2414-dh1/) bei der mit Lua-Sktipten die Fahrstraßen, die Zugzielanzeige und die Türen an den Zügen geschaltet werden.
+Das Repository enthält die Steuerung der kleinen [Dioramaanlage](https://www.eepforum.de/forum/thread/35836-weil-ihr-in-der-weihnachtszeit-nichts-von-mir-gesehen-habt-hier-ein-kleines-gesc/) von [DH1](https://www.eepforum.de/user/2414-dh1/) bei der mit Lua-Skripten die Fahrstraßen, die Zugzielanzeige und die Türen an den Zügen geschaltet werden.
 
-Die Züge werden auf dieser Anlage automatisch alle 2:30 Minuten aus den Depots abgerufen und über je nach ihren Routen über Fahrstraßen in und aus dem Bahnhof geleitet. Die Zugzielanzeige im Bahnhof zeigt auf den jeweiligen Gleisen den aktuellen und bis zu 2 Folgezüge korrekt an. Bei Verspätunmgen wird automatisch die Anzeige um eine Laufschrift-Meldung erweitert. Die Türen der Züge auf der Bahnsteigseite werden kurz nach dem Halt geöffnet und kurz vor der Abfahrt wieder geschlossen.
+Die Züge werden auf dieser Anlage automatisch alle 2:30 Minuten aus den Depots abgerufen und über je nach ihren Routen über Fahrstraßen in und aus dem Bahnhof geleitet. Die Zugzielanzeige im Bahnhof zeigt auf den jeweiligen Gleisen den aktuellen und bis zu 2 Folgezüge korrekt an. Bei Verspätungen wird automatisch die Anzeige um eine Laufschrift-Meldung erweitert. Die Türen der Züge auf der Bahnsteigseite werden kurz nach dem Halt geöffnet und kurz vor der Abfahrt wieder geschlossen.
 
-Außerdem wird ein Bahnübergang, die Straßen-Einmündungen, ein Kreisverker und eine (sehr einfache) Ampel mit Lua geschaltet.
+Außerdem wird ein Bahnübergang, die Straßen-Einmündungen, ein Kreisverkehr und eine (sehr einfache) Ampel mit Lua geschaltet.
 
 ## Version 1.1
 
@@ -12,24 +12,24 @@ Die Version [v1.1](https://github.com/FrankBuchholz/EEP_Zugzielanzeige/releases/
 
 ## Version 1.2
 
-Version v1.2 enthält die von mir überarbeiteten Lua-Skripte für die Orginal-Anlage von [DH1](https://www.eepforum.de/user/2414-dh1/).
+Version v1.2 enthält die von mir überarbeiteten Lua-Skripte für die Original-Anlage von [DH1](https://www.eepforum.de/user/2414-dh1/).
 
-Das wesentliche Ziel dabei war die Erhöhung der Lesbarkeit und die Erleicherung für weitere Anpassungen - Die Funktionalität der Original-Version wurde dabei nicht geändert:
+Das wesentliche Ziel dabei war die Erhöhung der Lesbarkeit und die Erleichterung für weitere Anpassungen - Die Funktionalität der Original-Version wurde dabei nicht geändert:
 
 - Vereinheitlichung von Variablennamen
-- Umfassendere Dokumentation imn den Skripten
+- Fortführung der umfassendere Dokumentation in den Skripten
 - Ersatz von globalen Variablen und Funktionen durch lokale Variablen und Funktionen soweit das möglich war
-- Ersatz von generierten globalen Funktionen durch parametriesierte lokale Funktionen
-- Einführung von Konstanten und Variablem, um Referenzen auf Objekte in der Anlage nur einmaling in Tabellen definieren zu können
+- Ersatz von generierten globalen Funktionen durch parametrisierte lokale Funktionen
+- Einführung von Konstanten und Variablem, um Referenzen auf Objekte in der Anlage nur einmalig in Tabellen definieren zu können
 - Beschriftung der Bahnhofschilder
-- Auslagerung der Strassensteuerung in ein separates Skript
-- Erweiterete Protokollierung im Ereignisprotokoll und in Tipp-Texten zur einfacheren Analyse der Anlage und der Skripte
+- Auslagerung der Straßensteuerung in ein separates Skript
+- Erweiterte Protokollierung im Ereignisprotokoll und in Tipp-Texten zur einfacheren Analyse der Anlage und der Skripte
 
-Zur Analyse der Anlage wurde das [Gleisplan-](https://frankbuchholz.github.io/EEP_convert_anl3_file/EEP_Gleisplan.html) und das [Inventar-Programm](https://frankbuchholz.github.io/EEP_convert_anl3_file/EEP_Inventar.html) aus dem GitHub-Repositoty [`EEP_convert_anl3_file`](https://github.com/FrankBuchholz/EEP_convert_anl3_file) verwendet.
+Zur Analyse der Anlage wurde das [Gleisplan-](https://frankbuchholz.github.io/EEP_convert_anl3_file/EEP_Gleisplan.html) und das [Inventar-Programm](https://frankbuchholz.github.io/EEP_convert_anl3_file/EEP_Inventar.html) aus dem GitHub-Repository [`EEP_convert_anl3_file`](https://github.com/FrankBuchholz/EEP_convert_anl3_file) verwendet.
 
 ### Betrieb
 
-Mit dem Start/Stop-Signal wird der Fahrbetrieb gestartet. Nach 'Stop' fahren die Züge und Fahrzeuge wieder in die Depots.
+Mit dem Start/Stopp-Signal wird der Fahrbetrieb gestartet. Nach 'Stopp' fahren die Züge und Fahrzeuge wieder in die Depots.
 
 ### Installation
 
@@ -53,9 +53,9 @@ Die Fußgänger-Ampel kann ebenfalls durch die Baustellenampel ersetzt und geeig
 
 Die Züge in den Depots können durch andere Züge mit geeigneter Routenzuordnung ersetzt oder ergänzt werden. Damit die Türen automatisch betätigt werden können müssen die Achsgruppen zugeordnet werden: 1 geschlossen, 2 links offen, 3 rechts offen (Bahnsteigseite).
 
-Die Zugnummern, Zwischenziele, Ziele und die Info (Laufschrift) können im Skript `ZZA_Diorama.lua` in Tabelle `Routen` frei geändert werden. (Die Routen und Gleise sind eng mit den Fahrstraßen verknüft und können nicht geändert werden.)
+Die Zugnummern, Zwischenziele, Ziele und die Info (Laufschrift) können im Skript `ZZA_Diorama.lua` in Tabelle `Routen` frei geändert werden. (Die Routen und Gleise sind eng mit den Fahrstraßen verknüpft und können nicht geändert werden.)
 
-Die Züge aus den Depots 1 (West) und 2 (Ost) werden gleichzeitig alle 2:30 Minuten abgerufen. Wenn ihr die Frequenz ändern möchtet, dann könnt ihr das bei stehender Anlage tun, indem ihr den Wert der Variablen `ZugAbstand` (in nicht allzugroßer Weise) verändert (750 / 5 = 150 Sekunden = 2:30 Minuten):  
+Die Züge aus den Depots 1 (West) und 2 (Ost) werden gleichzeitig alle 2:30 Minuten abgerufen. Wenn ihr die Frequenz ändern möchtet, dann könnt ihr das bei stehender Anlage tun, indem ihr den Wert der Variablen `ZugAbstand` (in nicht allzu großer Weise) verändert (750 / 5 = 150 Sekunden = 2:30 Minuten):  
 `local ZugAbstand = 750`
 
 Das Gleisbildstellpult `ZZA_Demo - Bahnhof` kann in ein neues Stellpult auf der Anlage geladen werden. Damit können die Fahrstraßen und Züge beobachtet werden. Eine Steuerung ist nicht möglich, da Eingriffe in die automatische Steuerung in der Regel zu Chaos führen.
